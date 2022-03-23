@@ -28,6 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: main
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.32.3
@@ -47,6 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: main
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.32.3
