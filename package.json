@@ -1,0 +1,56 @@
+{
+	"name": "@santima10/jest-twitch-reporter",
+	"version": "1.0.0",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "🃏 A jest reporter for Twitch chat",
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts",
+	"keywords": [
+		"jest",
+		"twitch",
+		"twitch chat",
+		"jest reporter"
+	],
+	"scripts": {
+		"lint": "eslint . --ext .ts --ignore-path .gitignore",
+		"build": "tsc",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"prepublish": "yarn build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SantiMA10/jest-twitch-reporter.git"
+	},
+	"author": {
+		"name": "Santiago Martin Agra",
+		"email": "open-source@santiagomartin.dev"
+	},
+	"license": "CC-BY-4.0",
+	"bugs": {
+		"url": "https://github.com/SantiMA10/jest-twitch-reporter/issues"
+	},
+	"homepage": "https://github.com/SantiMA10/jest-twitch-reporter#readme",
+	"devDependencies": {
+		"@next/eslint-plugin-next": "^12.1.0",
+		"@santima10/eslint-config": "^2.2.0",
+		"@swc/core": "^1.2.160",
+		"@swc/jest": "^0.2.20",
+		"@types/jest": "^27.4.1",
+		"@typescript-eslint/eslint-plugin": "^5.16.0",
+		"@typescript-eslint/parser": "^5.0.0",
+		"eslint": "^8.11.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-jest": "^25.7.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react": "^7.29.4",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"jest": "^27.5.1",
+		"prettier": "^2.6.0",
+		"typescript": "^4.6.2"
+	},
+	"prettier": "@santima10/eslint-config/.prettierrc.json"
+}
