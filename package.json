@@ -22,7 +22,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/SantiMA10/jest-twitch-reporter.git"
+		"url": "git+https://github.com/SantiMA10/jest-chat-reporter.git"
 	},
 	"author": {
 		"name": "Santiago Martin Agra",
@@ -30,9 +30,9 @@
 	},
 	"license": "CC-BY-4.0",
 	"bugs": {
-		"url": "https://github.com/SantiMA10/jest-twitch-reporter/issues"
+		"url": "https://github.com/SantiMA10/jest-chat-reporter/issues"
 	},
-	"homepage": "https://github.com/SantiMA10/jest-twitch-reporter#readme",
+	"homepage": "https://github.com/SantiMA10/jest-chat-reporter#readme",
 	"devDependencies": {
 		"@jest/reporters": "^27.5.1",
 		"@next/eslint-plugin-next": "^12.1.0",

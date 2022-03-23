@@ -1,4 +1,4 @@
-# 🃏 @santima10/jest-chat-reporter [![node](https://github.com/SantiMA10/jest-twitch-reporter/actions/workflows/node.yml/badge.svg)](https://github.com/SantiMA10/jest-twitch-reporter/actions/workflows/node.yml)
+# 🃏 @santima10/jest-chat-reporter [![node](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/node.yml/badge.svg)](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/node.yml)
 
 > A jest reporter for chats like: Twitch, Discord, etc.
 
