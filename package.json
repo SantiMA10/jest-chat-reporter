@@ -1,10 +1,10 @@
 {
-	"name": "@santima10/jest-twitch-reporter",
+	"name": "@santima10/jest-chat-reporter",
 	"version": "1.0.0",
 	"publishConfig": {
 		"access": "public"
 	},
-	"description": "🃏 A jest reporter for Twitch chat",
+	"description": "🃏 A jest reporter for chats like: Twitch, Discord, etc.",
 	"main": "dist/src/index.js",
 	"types": "dist/src/index.d.ts",
 	"keywords": [
@@ -34,13 +34,16 @@
 	},
 	"homepage": "https://github.com/SantiMA10/jest-twitch-reporter#readme",
 	"devDependencies": {
+		"@jest/reporters": "^27.5.1",
 		"@next/eslint-plugin-next": "^12.1.0",
 		"@santima10/eslint-config": "^2.2.0",
 		"@swc/core": "^1.2.160",
 		"@swc/jest": "^0.2.20",
 		"@types/jest": "^27.4.1",
+		"@types/tmi.js": "^1.8.1",
 		"@typescript-eslint/eslint-plugin": "^5.16.0",
 		"@typescript-eslint/parser": "^5.0.0",
+		"dotenv": "^16.0.0",
 		"eslint": "^8.11.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-import": "^2.25.4",
@@ -52,5 +55,8 @@
 		"prettier": "^2.6.0",
 		"typescript": "^4.6.2"
 	},
-	"prettier": "@santima10/eslint-config/.prettierrc.json"
+	"prettier": "@santima10/eslint-config/.prettierrc.json",
+	"dependencies": {
+		"tmi.js": "^1.8.5"
+	}
 }

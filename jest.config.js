@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
+require('dotenv').config();
 
 module.exports = {
 	// All imported modules in your tests should be mocked automatically
@@ -99,7 +101,17 @@ module.exports = {
 	// projects: undefined,
 
 	// Use this configuration option to add custom reporters to Jest
-	// reporters: undefined,
+	reporters: [
+		'default',
+		// [
+		// 	'./dist/src/index.js',
+		// 	{
+		// 		channels: ['SantiMA10'],
+		// 		username: process.env.TWITCH_USERNAME,
+		// 		password: process.env.TWITCH_PASSWORD,
+		// 	},
+		// ],
+	],
 
 	// Automatically reset mock state before every test
 	// resetMocks: false,
