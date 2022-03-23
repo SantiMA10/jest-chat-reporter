@@ -1,4 +1,4 @@
-# 🃏 @santima10/jest-twitch-reporter
+# 🃏 @santima10/jest-twitch-reporter [![node](https://github.com/SantiMA10/jest-twitch-reporter/actions/workflows/node.yml/badge.svg)](https://github.com/SantiMA10/jest-twitch-reporter/actions/workflows/node.yml)
 
 > A jest reporter for Twitch chat
 
