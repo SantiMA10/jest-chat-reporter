@@ -1,5 +1,7 @@
 # 🃏 @santima10/jest-chat-reporter [![node](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/node.yml/badge.svg)](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/node.yml)
 
+⚠️⚠️ This package is still under development ⚠️⚠️
+
 > A jest reporter for chats like: Twitch, Discord, etc.
 
 ## Configuration
@@ -16,7 +18,7 @@
           '@santima10/jest-chat-reporter',
           {
             channels: [], // an array with the twitch channels names the report is going to send messages
-            username: '' // an string with the username for the twitch chat
+            username: '', // an string with the username for the twitch chat
             password: '' // an string with the oauth2 token for the twitch chat
           },
         ],
