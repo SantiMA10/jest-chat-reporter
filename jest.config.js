@@ -109,6 +109,7 @@ module.exports = {
 		// 		channels: ['SantiMA10'],
 		// 		username: process.env.TWITCH_USERNAME,
 		// 		password: process.env.TWITCH_PASSWORD,
+		// 		messagesOnWatchMode: false,
 		// 	},
 		// ],
 	],

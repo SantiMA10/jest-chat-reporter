@@ -19,7 +19,8 @@
           {
             channels: [], // an array with the twitch channels names the report is going to send messages
             username: '', // an string with the username for the twitch chat
-            password: '' // an string with the oauth2 token for the twitch chat
+            password: '', // an string with the oauth2 token for the twitch chat
+            messagesOnWatchMode: false // report or not test results to twitch in watch mode (default false)
           },
         ],
       ],

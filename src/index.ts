@@ -1,4 +1,4 @@
-import { AggregatedResult, Context, Reporter } from '@jest/reporters';
+import { AggregatedResult, Config, Context, Reporter } from '@jest/reporters';
 import tmi from 'tmi.js';
 
 import { TwitchChatService } from './services/chat/TwitchChatService';
@@ -8,8 +8,13 @@ export default class TwitchJestReporter implements Pick<Reporter, 'onRunComplete
 	private tmiClient: tmi.Client;
 
 	public constructor(
-		_: Record<string, unknown>,
-		reporterConfig: { channels: string[]; username: string; password: string },
+		private globalConfig: Config.GlobalConfig,
+		private reporterConfig: {
+			channels: string[];
+			username: string;
+			password: string;
+			messagesOnWatchMode?: boolean;
+		},
 	) {
 		this.tmiClient = new tmi.Client({
 			identity: {
@@ -21,6 +26,11 @@ export default class TwitchJestReporter implements Pick<Reporter, 'onRunComplete
 	}
 
 	public onRunComplete = async (_: Set<Context>, results: AggregatedResult): Promise<void> => {
-		await new ReportTestResults(new TwitchChatService(this.tmiClient)).run(results);
+		await new ReportTestResults(new TwitchChatService(this.tmiClient), {
+			messagesOnWatchMode: !!this.reporterConfig.messagesOnWatchMode,
+		}).run({
+			...results,
+			runningOnWatchMode: this.globalConfig.watch || this.globalConfig.watchAll,
+		});
 	};
 }
