@@ -14,6 +14,13 @@ export class TwitchChatService implements ChatService {
 			await this.tmiClient.say(channel, message);
 		}
 
+		const disconnected = new Promise<void>((resolve) => {
+			this.tmiClient.on('disconnected', () => {
+				resolve();
+			});
+		});
 		await this.tmiClient.disconnect();
+
+		await disconnected;
 	}
 }

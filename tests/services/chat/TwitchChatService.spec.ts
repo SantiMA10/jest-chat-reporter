@@ -10,6 +10,9 @@ describe('TwitchChatService', () => {
 				say: jest.fn(),
 				getOptions: () => ({ channels: ['#channel', '#channel2'] }),
 				disconnect: jest.fn(),
+				on: (_: string, callback: () => void) => {
+					callback();
+				},
 			};
 
 			const twitchChatService = new TwitchChatService(tmiClient as unknown as tmi.Client);
