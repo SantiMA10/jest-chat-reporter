@@ -32,5 +32,33 @@ describe('ReportTestResults', () => {
 			expect(chatService.say).toHaveBeenNthCalledWith(1, '❌ 1/1 tests failed');
 			expect(chatService.say).not.toHaveBeenNthCalledWith(2, '✅ 0/1 tests passed');
 		});
+
+		it('sent messages if the tests are running in watch mode and the watch mode is enabled', async () => {
+			const chatService = new ChatServiceMock();
+			const subject = new ReportTestResults(chatService, { messagesOnWatchMode: true });
+
+			await subject.run({
+				numFailedTests: 1,
+				numPassedTests: 0,
+				numTotalTests: 1,
+				runningOnWatchMode: true,
+			});
+
+			expect(chatService.say).toHaveBeenCalled();
+		});
+
+		it('does not sent messages if the tests are running in watch mode and the watch mode is disabled', async () => {
+			const chatService = new ChatServiceMock();
+			const subject = new ReportTestResults(chatService);
+
+			await subject.run({
+				numFailedTests: 1,
+				numPassedTests: 0,
+				numTotalTests: 1,
+				runningOnWatchMode: true,
+			});
+
+			expect(chatService.say).not.toHaveBeenCalled();
+		});
 	});
 });
