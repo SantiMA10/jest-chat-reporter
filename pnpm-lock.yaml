@@ -6,6 +6,7 @@ specifiers:
   '@santima10/eslint-config': ^2.2.0
   '@swc/core': ^1.2.160
   '@swc/jest': ^0.2.20
+  '@types/is-ci': ^3.0.0
   '@types/jest': ^27.4.1
   '@types/tmi.js': ^1.8.1
   '@typescript-eslint/eslint-plugin': ^5.16.0
@@ -18,12 +19,14 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-react: ^7.29.4
   eslint-plugin-simple-import-sort: ^7.0.0
+  is-ci: ^3.0.1
   jest: ^27.5.1
   prettier: ^2.6.0
   tmi.js: ^1.8.5
   typescript: ^4.6.2
 
 dependencies:
+  is-ci: 3.0.1
   tmi.js: 1.8.5
 
 devDependencies:
@@ -32,6 +35,7 @@ devDependencies:
   '@santima10/eslint-config': 2.2.0_61628820d2de327c39e46aeba0e43aa4
   '@swc/core': 1.2.160
   '@swc/jest': 0.2.20_@swc+core@1.2.160
+  '@types/is-ci': 3.0.0
   '@types/jest': 27.4.1
   '@types/tmi.js': 1.8.1
   '@typescript-eslint/eslint-plugin': 5.16.0_3fed250b11519414a4c7d52468dd6bf5
@@ -899,6 +903,12 @@ packages:
       '@types/node': 17.0.23
     dev: true
 
+  /@types/is-ci/3.0.0:
+    resolution: {integrity: sha512-Q0Op0hdWbYd1iahB+IFNQcWXFq4O0Q5MwQP7uN0souuQ4rPg1vEYcnIOfr1gY+M+6rc8FGoRaBO1mOOvL29sEQ==}
+    dependencies:
+      ci-info: 3.3.0
+    dev: true
+
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
@@ -1407,7 +1417,6 @@ packages:
 
   /ci-info/3.3.0:
     resolution: {integrity: sha512-riT/3vI5YpVH6/qomlDnJow6TBee2PBKSEpx3O32EGPYbWGIRsIlGRms3Sm74wYE1JMo8RnO04Hb12+v1J5ICw==}
-    dev: true
 
   /cjs-module-lexer/1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
@@ -2313,6 +2322,13 @@ packages:
     resolution: {integrity: sha512-nsuwtxZfMX67Oryl9LCQ+upnC0Z0BgpwntpS89m1H/TLF0zNfzfLMV/9Wa/6MZsj0acpEjAO0KF1xT6ZdLl95w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /is-ci/3.0.1:
+    resolution: {integrity: sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==}
+    hasBin: true
+    dependencies:
+      ci-info: 3.3.0
+    dev: false
 
   /is-core-module/2.8.1:
     resolution: {integrity: sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA==}

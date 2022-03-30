@@ -1,9 +1,14 @@
 import { ChatService } from '../services/chat/ChatService';
+import { EnvironmentService } from '../services/EnvironmentService';
 
 export class ReportTestResults {
 	public constructor(
 		private chatService: ChatService,
-		private config: { messagesOnWatchMode: boolean } = { messagesOnWatchMode: false },
+		private environmentService: EnvironmentService,
+		private config: { messagesOnWatchMode?: boolean; onlyCI?: boolean } = {
+			messagesOnWatchMode: false,
+			onlyCI: false,
+		},
 	) {}
 
 	public async run(results: {
@@ -13,6 +18,10 @@ export class ReportTestResults {
 		runningOnWatchMode?: boolean;
 	}): Promise<void> {
 		if (!this.config.messagesOnWatchMode && results.runningOnWatchMode) {
+			return;
+		}
+
+		if (this.config.onlyCI && !this.environmentService.isCI()) {
 			return;
 		}
 
