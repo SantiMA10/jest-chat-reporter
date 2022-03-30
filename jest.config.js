@@ -103,15 +103,15 @@ module.exports = {
 	// Use this configuration option to add custom reporters to Jest
 	reporters: [
 		'default',
-		// [
-		// 	'./dist/src/index.js',
-		// 	{
-		// 		channels: ['SantiMA10'],
-		// 		username: process.env.TWITCH_USERNAME,
-		// 		password: process.env.TWITCH_PASSWORD,
-		// 		messagesOnWatchMode: false,
-		// 	},
-		// ],
+		[
+			'./dist/src/index.js',
+			{
+				channels: ['SantiMA10'],
+				username: process.env.TWITCH_USERNAME,
+				password: process.env.TWITCH_PASSWORD,
+				messagesOnWatchMode: false,
+			},
+		],
 	],
 
 	// Automatically reset mock state before every test
