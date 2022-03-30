@@ -1,12 +1,12 @@
-# 🃏 @santima10/jest-chat-reporter [![node](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/node.yml/badge.svg)](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/node.yml)
+# 🃏 @santima10/jest-chat-reporter [![node](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/node.yml/badge.svg)](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/node.yml) [![Publish](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/publish.yml/badge.svg)](https://github.com/SantiMA10/jest-chat-reporter/actions/workflows/publish.yml)
 
 ⚠️⚠️ This package is still under development ⚠️⚠️
 
 > A jest reporter for chats like: Twitch, Discord, etc.
 
-## Configuration
+## 🛠 Configuration
 
-### Twitch
+### 🟣 Twitch
 
 1. Install the package in your project with your favorite package manager.
 2. In your `jest.config.js` file:
@@ -31,11 +31,15 @@
   }
   ```
 
-## Inspiration
+## ✨ Inspiration
 
 - [jest-plugin-yeelight](https://github.com/heedrox/jest-plugin-yeelight)
 - [Slack jest reporter](https://github.com/BrunoScheufler/blog-code-examples/tree/master/custom-jest-reporter)
 
-## How has this project been built?
+## 👀 How has this project been built?
 
 Great question, we have a [playlist](https://www.youtube.com/watch?v=qe7IE8qdo6U&list=PLokEg24KkXH06UsAYxBZkOJ1YJsBKLRlk) with all the videos of how the project was build (in spanish)
+
+## 🐛 Known issues
+
+Sometimes jest cannot finish the process correctly ([more info in the issue](https://github.com/SantiMA10/jest-chat-reporter/issues/4)), until we solve the problem you can use the flag `--forceExit`.
