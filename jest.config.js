@@ -110,6 +110,7 @@ module.exports = {
 				username: process.env.TWITCH_USERNAME,
 				password: process.env.TWITCH_PASSWORD,
 				messagesOnWatchMode: false,
+				onlyCI: true,
 			},
 		],
 	],
