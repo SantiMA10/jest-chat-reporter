@@ -16,7 +16,7 @@
 	"scripts": {
 		"lint": "eslint . --ext .ts --ignore-path .gitignore",
 		"build": "tsc",
-		"test": "jest",
+		"test": "jest --forceExit",
 		"test:watch": "jest --watch",
 		"prepublish": "yarn build"
 	},
