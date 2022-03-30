@@ -39,3 +39,6 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm test
+        env:
+          TWITCH_USERNAME: ${{secrets.TWITCH_USERNAME}}
+          TWITCH_PASSWORD: ${{secrets.TWITCH_PASSWORD}}
