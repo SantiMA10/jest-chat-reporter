@@ -21,19 +21,28 @@ export class ReportTestResults {
 			return;
 		}
 
-		if (this.config.onlyCI && !this.environmentService.isCI()) {
+		const isCi = this.environmentService.isCI();
+
+		if (this.config.onlyCI && !isCi) {
 			return;
 		}
 
+		const service = this.environmentService.getServiceName();
+		const buildUrl = this.environmentService.getBuildUrl();
+
 		if (results.numPassedTests > 0) {
 			await this.chatService.say(
-				`✅ ${results.numPassedTests}/${results.numTotalTests} tests passed`,
+				`[${service}] ✅ ${results.numPassedTests}/${results.numTotalTests} tests passed${
+					isCi ? `. More info: ${buildUrl}` : ''
+				}`,
 			);
 		}
 
 		if (results.numFailedTests > 0) {
 			await this.chatService.say(
-				`❌ ${results.numFailedTests}/${results.numTotalTests} tests failed`,
+				`[${service}] ❌ ${results.numFailedTests}/${results.numTotalTests} tests failed${
+					isCi ? `. More info: ${buildUrl}` : ''
+				}`,
 			);
 		}
 	}
