@@ -1,6 +1,6 @@
 {
 	"name": "@santima10/jest-chat-reporter",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -16,7 +16,7 @@
 	"scripts": {
 		"lint": "eslint . --ext .ts --ignore-path .gitignore",
 		"build": "tsc",
-		"test": "jest",
+		"test": "jest --forceExit",
 		"test:watch": "jest --watch",
 		"prepublish": "yarn build"
 	},
@@ -39,6 +39,7 @@
 		"@santima10/eslint-config": "^2.2.0",
 		"@swc/core": "^1.2.160",
 		"@swc/jest": "^0.2.20",
+		"@types/env-ci": "^3.1.1",
 		"@types/jest": "^27.4.1",
 		"@types/tmi.js": "^1.8.1",
 		"@typescript-eslint/eslint-plugin": "^5.16.0",
@@ -57,6 +58,7 @@
 	},
 	"prettier": "@santima10/eslint-config/.prettierrc.json",
 	"dependencies": {
+		"env-ci": "^7.1.0",
 		"tmi.js": "^1.8.5"
 	}
 }

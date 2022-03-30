@@ -21,7 +21,7 @@ jobs:
           node-version: 16.x
           cache: 'pnpm'
       - run: pnpm install
-      - run: pnpm run build
+      - run: pnpm build
 
   test:
     runs-on: ubuntu-latest
@@ -37,4 +37,8 @@ jobs:
           node-version: 16.x
           cache: 'pnpm'
       - run: pnpm install
+      - run: pnpm build
       - run: pnpm test
+        env:
+          TWITCH_USERNAME: ${{secrets.TWITCH_USERNAME}}
+          TWITCH_PASSWORD: ${{secrets.TWITCH_PASSWORD}}

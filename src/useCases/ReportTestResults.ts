@@ -1,9 +1,14 @@
 import { ChatService } from '../services/chat/ChatService';
+import { EnvironmentService } from '../services/EnvironmentService';
 
 export class ReportTestResults {
 	public constructor(
 		private chatService: ChatService,
-		private config: { messagesOnWatchMode: boolean } = { messagesOnWatchMode: false },
+		private environmentService: EnvironmentService,
+		private config: { messagesOnWatchMode?: boolean; onlyCI?: boolean } = {
+			messagesOnWatchMode: false,
+			onlyCI: false,
+		},
 	) {}
 
 	public async run(results: {
@@ -16,15 +21,28 @@ export class ReportTestResults {
 			return;
 		}
 
+		const isCi = this.environmentService.isCI();
+
+		if (this.config.onlyCI && !isCi) {
+			return;
+		}
+
+		const service = this.environmentService.getServiceName();
+		const buildUrl = this.environmentService.getBuildUrl();
+
 		if (results.numPassedTests > 0) {
 			await this.chatService.say(
-				`✅ ${results.numPassedTests}/${results.numTotalTests} tests passed`,
+				`[${service}] ✅ ${results.numPassedTests}/${results.numTotalTests} tests passed${
+					isCi ? `. More info: ${buildUrl}` : ''
+				}`,
 			);
 		}
 
 		if (results.numFailedTests > 0) {
 			await this.chatService.say(
-				`❌ ${results.numFailedTests}/${results.numTotalTests} tests failed`,
+				`[${service}] ❌ ${results.numFailedTests}/${results.numTotalTests} tests failed${
+					isCi ? `. More info: ${buildUrl}` : ''
+				}`,
 			);
 		}
 	}
