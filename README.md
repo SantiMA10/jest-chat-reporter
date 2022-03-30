@@ -6,6 +6,8 @@
 
 ## Configuration
 
+### Twitch
+
 1. Install the package in your project with your favorite package manager.
 2. In your `jest.config.js` file:
 
@@ -32,3 +34,7 @@
 
 - [jest-plugin-yeelight](https://github.com/heedrox/jest-plugin-yeelight)
 - [Slack jest reporter](https://github.com/BrunoScheufler/blog-code-examples/tree/master/custom-jest-reporter)
+
+## How has this project been built?
+
+Great question, we have a [playlist](https://www.youtube.com/watch?v=qe7IE8qdo6U&list=PLokEg24KkXH06UsAYxBZkOJ1YJsBKLRlk) with all the videos of how the project was build (in spanish)
