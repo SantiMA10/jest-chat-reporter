@@ -24,5 +24,27 @@ describe('TwitchChatService', () => {
 			expect(tmiClient.say).toHaveBeenCalledWith('#channel2', 'Hello, world!');
 			expect(tmiClient.disconnect).toHaveBeenCalled();
 		});
+
+		it('announces the message if the option is enabled', async () => {
+			const tmiClient = {
+				connect: jest.fn(),
+				say: jest.fn(),
+				getOptions: () => ({ channels: ['#channel'] }),
+				disconnect: jest.fn(),
+				on: (_: string, callback: () => void) => {
+					callback();
+				},
+			};
+
+			const twitchChatService = new TwitchChatService(tmiClient as unknown as tmi.Client, {
+				useAnnounce: true,
+			});
+
+			await twitchChatService.say('Hello, world!');
+
+			expect(tmiClient.connect).toHaveBeenCalled();
+			expect(tmiClient.say).toHaveBeenCalledWith('#channel', '/announce Hello, world!');
+			expect(tmiClient.disconnect).toHaveBeenCalled();
+		});
 	});
 });

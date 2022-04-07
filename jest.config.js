@@ -111,6 +111,7 @@ module.exports = {
 				password: process.env.TWITCH_PASSWORD,
 				messagesOnWatchMode: false,
 				onlyCI: true,
+				useAnnounce: true,
 			},
 		],
 	],

@@ -24,6 +24,7 @@
             password: '', // an string with the oauth2 token for the twitch chat
             messagesOnWatchMode: false, // report or not test results to twitch in watch mode (default false)
             onlyCI: false // report or not test results to twitch only on CI environments (default false)
+            useAnnounce: false // uses the /announce command in the Twitch Chat (default false) (needs moderator role)
           },
         ],
       ],
