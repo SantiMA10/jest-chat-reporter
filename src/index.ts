@@ -16,6 +16,7 @@ export default class TwitchJestReporter implements Pick<Reporter, 'onRunComplete
 			password: string;
 			messagesOnWatchMode?: boolean;
 			onlyCI?: boolean;
+			useAnnounce?: boolean;
 		},
 	) {
 		this.tmiClient = new tmi.Client({
@@ -29,7 +30,7 @@ export default class TwitchJestReporter implements Pick<Reporter, 'onRunComplete
 
 	public onRunComplete = async (_: Set<Context>, results: AggregatedResult): Promise<void> => {
 		await new ReportTestResults(
-			new TwitchChatService(this.tmiClient),
+			new TwitchChatService(this.tmiClient, { useAnnounce: this.reporterConfig.useAnnounce }),
 			new EnvCIEnvironmentService(),
 			{
 				messagesOnWatchMode: !!this.reporterConfig.messagesOnWatchMode,
