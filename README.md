@@ -8,6 +8,8 @@
 
 ### 🟣 Twitch
 
+<img align="right" src="https://user-images.githubusercontent.com/7255298/162411830-feb76671-b86a-46de-85ee-c4ba92228edf.gif" />
+
 1. Install the package in your project with your favorite package manager.
 2. In your `jest.config.js` file:
 
@@ -31,6 +33,8 @@
     //...
   }
   ```
+  
+
 
 ## ✨ Inspiration
 
